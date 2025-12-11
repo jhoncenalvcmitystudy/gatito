@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control ESP32</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Control ESP32</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Conexión Bluetooth</h2>
+      <p id="status">Estado: Desconectado</p>
+      <button id="btnConectar">Conectar a ESP32</button>
+    </section>
+
+    <section class="card">
+      <h2>Activación del Sistema</h2>
+      <button id="btnActivar">ACTIVAR SISTEMA</button>
+      <p class="note">Intervalo anti-spam: 3 segundos</p>
+    </section>
+
+    <section class="card">
+      <h2>Configurar Horario</h2>
+
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora">
+
+      <button id="btnEnviarHora">Actualizar horario</button>
+    </section>
+
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
